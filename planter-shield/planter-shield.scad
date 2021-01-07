@@ -2,7 +2,7 @@ include <MCAD/units/metric.scad>
 use <MCAD/shapes/2Dshapes.scad>
 
 across_points = 90;
-wall_thick = 2.4;
+wall_thick = 1.6;
 // test piece
 // height = 10;
 height = 128;
