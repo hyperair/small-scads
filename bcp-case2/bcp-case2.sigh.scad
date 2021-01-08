@@ -33,3 +33,5 @@ module assemble_case(x, y, z, wall, cut_rad)
       cutout(cut_rad, z + wall);
   }
 }
+
+assemble_case(bcp_len, bcp_wid, bcp_hei, wall_thi, cutout_rad);
