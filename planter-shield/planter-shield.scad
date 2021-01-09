@@ -4,13 +4,13 @@ use <MCAD/shapes/2Dshapes.scad>
 across_points = 90;
 wall_thick = 1.6;
 
-lid_height = 50;
+lid_height = 35;
 lid_cutout_dia = 46;
 
 // test piece
 // bottom_height = 10;
 
-bottom_height = 128;
+bottom_height = 120;
 bottom_cutout_dia = 60;
 
 module wall(diameter, wall_thickness, height)
