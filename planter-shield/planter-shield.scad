@@ -41,6 +41,8 @@ module shield(diameter, wall_thickness, height, cutout_diameter)
   }
 }
 
+//main shield
 shield(across_points, wall_thick, bottom_height, bottom_cutout_dia);
+//lid
 translate (X * across_points * 1.5)
-  shield(across_points + wall_thick * 3, wall_thick, lid_height, lid_cutout_dia);
+  shield(across_points + wall_thick * 2.5, wall_thick, lid_height, lid_cutout_dia);
