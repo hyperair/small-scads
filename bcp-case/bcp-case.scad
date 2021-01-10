@@ -2,14 +2,19 @@ use <MCAD/shapes/3Dshapes.scad>
 use <MCAD/array/rectangular.scad>
 include <MCAD/units/metric.scad>
 
-bcp_len = 85;
-bcp_wid = 55;
-bcp_hei = 5.5;
+// work some slop/tolerance into these numbers
+bcp_len = 85; // length of the pack
+bcp_wid = 55; // width of the pack
+bcp_hei = 5.5; // heigh of the pack
 
+// thickness of walls and floor
 wall_thi = 2;
 
+// radius of the cutout for easy pulling out (this is most likely to need tweaking)
 cutout_rad = bcp_wid / 7.5;
 
+// if you intend to print this in a resin printer, set to 1, else 0
+// this affects whether the extra holes are generated to avoid a resin column forming
 print_resin = 1;
 
 module case_blank(x, y, z)
