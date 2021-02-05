@@ -10,7 +10,7 @@ lid_cutout_dia = 46;
 // test piece
 // bottom_height = 10;
 
-bottom_height = 110;
+bottom_height = 105;
 bottom_cutout_dia = 60;
 
 module wall(diameter, wall_thickness, height)
