@@ -4,13 +4,13 @@ use <MCAD/shapes/2Dshapes.scad>
 across_points = 90;
 wall_thick = 1.6;
 
-lid_height = 40;
+lid_height = 35;
 lid_cutout_dia = 46;
 
 // test piece
 // bottom_height = 10;
 
-bottom_height = 105;
+bottom_height = 110;
 bottom_cutout_dia = 60;
 
 module wall(diameter, wall_thickness, height)
@@ -43,6 +43,7 @@ module shield(diameter, wall_thickness, height, cutout_diameter)
 
 //main shield
 shield(across_points, wall_thick, bottom_height, bottom_cutout_dia);
+
 //lid
 translate (X * across_points * 1.5)
-  shield(across_points + wall_thick * 2.5, wall_thick, lid_height, lid_cutout_dia);
+  shield(across_points + wall_thick * 2.75, wall_thick, lid_height, lid_cutout_dia);
