@@ -6,12 +6,38 @@ face="Bitstream Charter:style=Bold";
 height = 30;
 depth = 2;
 
+radius = 3;
+width = 15.5;
+rim_thickness = 1.5 / 2;
+
+inner_width = width - rim_thickness * 2;
+inner_radius = radius - rim_thickness;
+
+$fs = 0.4;
+$fa = 1;
+
 module mark_sq() {
-  #ccube([15.5, 15.5, height], center = X + Y);
+  #mcad_rounded_cube(
+    [width, width, height],
+    radius = radius,
+    sidesonly = true,
+    center = X + Y
+  );
+
   translate([0, 0, height - 0.5]) {
     difference(){
-      ccube([15.5, 15.5, depth + 0.5], center = X + Y);
-      ccube([14, 14, depth + 0.6], center = X + Y);
+      mcad_rounded_cube(
+        [width, width, depth + 0.5],
+        radius = radius,
+        sidesonly = true,
+        center = X + Y
+      );
+      mcad_rounded_cube(
+        [inner_width, inner_width, depth + 0.6],
+        radius = inner_radius,
+        sidesonly = true,
+        center = X + Y
+      );
     }
   }
 }
@@ -29,7 +55,7 @@ module mark_rd() {
 }
 
 module mark () {
-  translate([7.8, -3, height + depth])
+  translate([7.8, -3.5, height + depth])
     rotate([0, 180, 0])
     linear_extrude(height = 2.5)
     text(mark, font = face, size = 8, $fn=200);
