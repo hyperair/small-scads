@@ -24,7 +24,7 @@ module mark_sq() {
     center = X + Y
   );
 
-  translate([0, 0, height - 0.5]) {
+  translate([0, 0, height - 0.7]) {
     difference(){
       mcad_rounded_cube(
         [width, width, depth + 0.5],
@@ -55,10 +55,10 @@ module mark_rd() {
 }
 
 module mark () {
-  translate([7.8, -3.5, height + depth])
+  translate([7, -3, height + depth])
     rotate([0, 180, 0])
     linear_extrude(height = 2.5)
-    text(mark, font = face, size = 8, $fn=200);
+    text(mark, font = face, size = 7, $fn=200);
 }
 
 
