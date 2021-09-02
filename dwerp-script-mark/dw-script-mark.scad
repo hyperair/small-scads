@@ -1,12 +1,12 @@
 include <MCAD/units/metric.scad>
 use <MCAD/shapes/3Dshapes.scad>
 
-height = 30;
+height = 45;
 depth = 2;
 
 radius = 3;
-width = 15.5;
-rim_thickness = 1.2 / 2;
+width = 20;
+rim_thickness = 1.5 / 2;
 
 inner_width = width - rim_thickness * 2;
 inner_radius = radius - rim_thickness;
@@ -43,24 +43,28 @@ module mark_sq() {
 module mark_rd() {
   $fa = 1;
   $fs = 0.1;
-  rad = 8;
-  border = 0.4;
+  rad = width/2;
   #cylinder(r = rad, h = height);
   translate([0, 0, height - 0.5]) {
     difference(){
-      cylinder(r = rad, h = depth + 0.5);
-      cylinder(r = rad - border, h = depth + 0.6);
+      cylinder(r = rad, h = depth + 0.3);
+      cylinder(r = rad - rim_thickness, h = depth + 0.6);
     }
   }
 }
 
 module mark () {
-  f = 0.36;
-  translate([-0.35, -3.2, height + depth])
-    rotate([0, 180, -3])
+  f = 0.44;
+  translate([-0.45, -3.2, height + depth])
+    rotate([0, 180, -4])
     scale([f, f, 1]) import("./dw-script.stl");
 }
 
 
 mark_sq();
 mark();
+
+translate([25, 0, 0]) {
+  mark_rd();
+  translate([-0.2, 1, 0]) mark();
+}
