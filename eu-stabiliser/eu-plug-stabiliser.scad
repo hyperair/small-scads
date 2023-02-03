@@ -13,11 +13,11 @@ width = 50; // 37 original
 
 radius = 3.74; // 3.74 original
 
-trapezoid_bottom = 37;
+trapezoid_bottom = 37; // 37 original
 trapezoid_top = 27; // 23 original
 trapezoid_height = 4.5; // 7 original
 trapezoid_offset = 3; // distance from edge of cutout to nearest edge
-trapezoid_position = (depth / 2) - trapezoid_height - trapezoid_offset; 
+trapezoid_position = (depth / 2) - trapezoid_height - trapezoid_offset;
 
 difference () {
     translate ([0, 0, height / 2])
