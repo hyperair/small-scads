@@ -21,7 +21,7 @@ hole_size = [10, 10];
 hole_width = 3;
 hole_offset = [4, -5];
 
-rounding_r = 3;
+rounding_r = 4;
 
 module place_boltsnap_hole()
 {
