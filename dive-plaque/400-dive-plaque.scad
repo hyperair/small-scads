@@ -23,6 +23,8 @@ hole_offset = [4, -5];
 
 rounding_r = 4;
 
+plaque_text = "400";
+
 module place_boltsnap_hole()
 {
     translate([-length / 2, depth / 2] + hole_offset)
@@ -66,7 +68,7 @@ module plaque_text()
     translate(text_offset)
         translate([-length/2 * text_scale[0], -depth/2 * text_scale[1]])
         resize([length * text_scale[0], depth * text_scale[1]])
-        text("400", font=font);
+        text(plaque_text, font=font);
 }
 
 linear_extrude(height=thickness)
