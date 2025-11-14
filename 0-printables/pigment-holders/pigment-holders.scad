@@ -15,7 +15,8 @@ od = id + (wall * 2);
 spiral_t = id/6;
 base_hole_d = 7;
 
-array = [1,1];
+// to make pre-joined stuff!
+array = [6,2];
 
 module bit ()
 {
