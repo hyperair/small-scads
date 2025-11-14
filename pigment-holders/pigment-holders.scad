@@ -28,7 +28,7 @@ module bit ()
 module bits ()
 {
 	mcad_array_polar (number = 12)
-		translate ([id/2, 0]) bit ();
+		 translate ([id/2, 0]) bit ();
 }
 
 module pillars ()
