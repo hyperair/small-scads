@@ -18,6 +18,8 @@ module diff_block() {
         cube([base, height, length - wall * 2]);
 }
 
+translate([length, base, 0])
+rotate([90, 0, -90])
 difference() {
     main_prism();
     diff_block();
